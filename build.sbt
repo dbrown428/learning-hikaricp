@@ -9,5 +9,6 @@ lazy val root = (project in file("."))
             "org.scalatest" %% "scalatest" % "3.0.5" % "test",
             "org.postgresql" % "postgresql" % "42.2.2",
             "com.zaxxer" % "HikariCP" % "2.3.2",
+            "ch.qos.logback" % "logback-classic" % "1.2.3",
         )
     )

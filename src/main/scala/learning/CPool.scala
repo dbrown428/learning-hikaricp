@@ -9,12 +9,6 @@ import org.postgresql.ds.PGSimpleDataSource
 /**
  * Familiarizing myself with the Hikari connection pool using the Postgres 
  * Datasource class.
- *
- * Topics to explore later:
- * ========================
- * - Prometheus Metrics tracker:
- *   Active connections, idle connections, pending threads, count of current 
- *   connections, max connections, and min connections.
  */
 object CPool {
     // Replace the hardcoded values with sys.env.get("POSTGRES_SERVER_NAME")
@@ -28,6 +22,8 @@ object CPool {
         props.setProperty("dataSource.password", "secret")
         props
     }
+
+    // this can fail if properties are invalid. Don't care for this demo.
     private val config: HikariConfig = {   
         val c = new HikariConfig(datasourceProperties)
         
